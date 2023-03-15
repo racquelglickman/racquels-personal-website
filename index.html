@@ -9,7 +9,7 @@
 
     <p>The total rent for the apartment is $4712 and there are 3 rooms: master, child, flex.</p>
     <p>Enter the price you would be willing to pay for each room.</p>
-
+  <!--
     <form id="userInput">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name"><br>
@@ -21,7 +21,8 @@
         <input type="number" id="flex" name="flex" min="0" max="4712">
         <input type="submit">
     </form><br>
-
+-->
+    <form id="calcTableForm">
     <table id="calcTable">
         <tr>
           <th>Name</th>
@@ -30,22 +31,46 @@
           <th>Flex</th>
         </tr>
         <tr>
-          <td>Name1</td>
-          <td>Master1</td>
-          <td>Child1</td>
-          <td>Flex1</td>
+          <td>
+            <input type="text" id="name1" name="name1">
+          </td>
+          <td>
+            <input type="text" id="master1" name="master1">
+          </td>
+          <td>
+            <input type="text" id="child1" name="child1">
+          </td>
+          <td>
+            <input type="text" id="flex1" name="flex1">
+          </td>
         </tr>
         <tr>
-          <td>Name2</td>
-          <td>Master2</td>
-          <td>Child2</td>
-          <td>Flex2</td>
+          <td>
+            <input type="text" id="name2" name="name2">
+          </td>
+          <td>
+            <input type="text" id="master2" name="master2">
+          </td>
+          <td>
+            <input type="text" id="child2" name="child2">
+          </td>
+          <td>
+            <input type="text" id="flex2" name="flex2">
+          </td>
         </tr>
         <tr>
-          <td>Name3</td>
-          <td>Master3</td>
-          <td>Child3</td>
-          <td>Flex3</td>
+          <td>
+            <input type="text" id="name3" name="name3">
+          </td>
+          <td>
+            <input type="text" id="master3" name="master3">
+          </td>
+          <td>
+            <input type="text" id="child3" name="child3">
+          </td>
+          <td>
+            <input type="text" id="flex3" name="flex3">
+          </td>
         </tr>
         <tr>
             <td>Average</td>
@@ -54,6 +79,8 @@
             <td></td>
         </tr>
       </table>
+      <br><input type="submit">
+      </form>
 
     <!--
     <table id="calcTable">
@@ -85,7 +112,7 @@
     -->
 
     <script>
-        const userInput = document.getElementById("userInput");
+        //const userInput = document.getElementById("userInput");
         let obj;
 
         const calcTable = document.getElementById("calcTable");
@@ -93,24 +120,26 @@
         
         const sample = document.createElement("h2");
         document.querySelector("body").appendChild(sample);
-        userInput.addEventListener('submit', function (e) {
+        calcTableForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            const fd = new FormData(userInput);
+            const fd = new FormData(calcTableForm);
             
             obj = Object.fromEntries(fd);
             console.log(obj);
 
-            sample.textContent = "SAMPLE This content added by JavaScript";
+            sample.textContent = "The page was submitted.";
+
+
 
             //add something about adding entries to table - calcTable
-            tableRows[1].cells[0].textContent = obj.name;
-            tableRows[1].cells[1].textContent = obj.master;
-            tableRows[1].cells[2].textContent = obj.child;
-            tableRows[1].cells[3].textContent = obj.flex 
+            //tableRows[1].cells[0].textContent = obj.name;
+            //tableRows[1].cells[1].textContent = obj.master;
+            //tableRows[1].cells[2].textContent = obj.child;
+            //tableRows[1].cells[3].textContent = obj.flex 
             
-            tableRows[1].cells[1].textContent = (master1 + master2 + master3) / 3;
-            tableRows[1].cells[2].textContent = (child1 + child2 + child3) / 3;
-            tableRows[1].cells[3].textContent = (flex1 + flex2 + flex3) / 3;
+            tableRows[4].cells[1].textContent = (parseInt(obj.master1,10) + parseInt(obj.master2,10) + parseInt(obj.master3,10)) / 3;
+            tableRows[4].cells[2].textContent = (parseInt(obj.child1,10) + parseInt(obj.child2,10) + parseInt(obj.child3,10)) / 3;
+            tableRows[4].cells[3].textContent = (parseInt(obj.flex1,10) + parseInt(obj.flex2,10) + parseInt(obj.flex3,10)) / 3;                
             
         })
 
