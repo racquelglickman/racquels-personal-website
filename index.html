@@ -137,9 +137,13 @@
             //tableRows[1].cells[2].textContent = obj.child;
             //tableRows[1].cells[3].textContent = obj.flex 
             
-            tableRows[4].cells[1].textContent = (parseInt(obj.master1,10) + parseInt(obj.master2,10) + parseInt(obj.master3,10)) / 3;
-            tableRows[4].cells[2].textContent = (parseInt(obj.child1,10) + parseInt(obj.child2,10) + parseInt(obj.child3,10)) / 3;
-            tableRows[4].cells[3].textContent = (parseInt(obj.flex1,10) + parseInt(obj.flex2,10) + parseInt(obj.flex3,10)) / 3;                
+            const averageMaster = (parseInt(obj.master1,10) + parseInt(obj.master2,10) + parseInt(obj.master3,10)) / 3;
+            const averageChild = (parseInt(obj.child1,10) + parseInt(obj.child2,10) + parseInt(obj.child3,10)) / 3;
+            const averageFlex = (parseInt(obj.flex1,10) + parseInt(obj.flex2,10) + parseInt(obj.flex3,10)) / 3; 
+            
+            tableRows[4].cells[1].textContent = averageMaster.toFixed(2);
+            tableRows[4].cells[2].textContent = averageChild.toFixed(2);
+            tableRows[4].cells[3].textContent = averageFlex.toFixed(2);              
             
         })
 
