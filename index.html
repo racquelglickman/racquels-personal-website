@@ -21,7 +21,7 @@
         <input type="number" id="flex" name="flex" min="0" max="4712">
         <input type="submit">
     </form><br>
-<!--
+
     <table id="calcTable">
         <tr>
           <th>Name</th>
@@ -30,87 +30,59 @@
           <th>Flex</th>
         </tr>
         <tr>
-          <td>Racquel</td>
-          <td>718-555-1212</td>
-          <td>Guacamole</td>
-          <td></td>
+          <td>Name1</td>
+          <td>Master1</td>
+          <td>Child1</td>
+          <td>Flex1</td>
         </tr>
         <tr>
-          <td>Estie</td>
-          <td>718-555-1212</td>
-          <td>Chips</td>
-          <td></td>
+          <td>Name2</td>
+          <td>Master2</td>
+          <td>Child2</td>
+          <td>Flex2</td>
         </tr>
         <tr>
-          <td>Britt</td>
-          <td>914-555-1212</td>
-          <td>Salsa</td>
-          <td></td>
+          <td>Name3</td>
+          <td>Master3</td>
+          <td>Child3</td>
+          <td>Flex3</td>
+        </tr>
+        <tr>
+            <td>Average</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+      </table>
+
+    <!--
+    <table id="calcTable">
+        <tr>
+          <th>Name</th>
+          <th>Master</th>
+          <th>Child</th>
+          <th>Flex</th>
+        </tr>
+        <tr>
+          <td>Name1</td>
+          <td>Master1</td>
+          <td>Child1</td>
+          <td>Flex1</td>
+        </tr>
+        <tr>
+          <td>Name2</td>
+          <td>Master2</td>
+          <td>Child2</td>
+          <td>Flex2</td>
+        </tr>
+        <tr>
+          <td>Name3</td>
+          <td>Master3</td>
+          <td>Child3</td>
+          <td>Flex3</td>
         </tr>
       </table>
     -->
-    
-    
-    <table id="calcTable">
-        <tr>
-          <th>Name</th>
-          <th>Master</th>
-          <th>Child</th>
-          <th>Flex</th>
-        </tr>
-        <tr>
-          <td>
-            <form>
-                <input type="text" id="name" name="name">
-            </form>
-          </td>
-          <td>
-            <form>
-                <input type="text" id="name" name="name">
-            </form>
-          </td>
-          <td>
-            <form>
-                <input type="text" id="name" name="name">
-            </form>
-          </td>
-          <td>
-            <form>
-                <input type="text" id="name" name="name">
-            </form>
-        </td>
-        </tr>
-        <tr>
-          <td><form>
-            <input type="text" id="name" name="name">
-        </form></td>
-          <td><form>
-            <input type="text" id="name" name="name">
-        </form></td>
-          <td><form>
-            <input type="text" id="name" name="name">
-        </form></td>
-          <td><form>
-            <input type="text" id="name" name="name">
-        </form></td>
-        </tr>
-        <tr>
-          <td><form>
-            <input type="text" id="name" name="name">
-        </form></td>
-          <td><form>
-            <input type="text" id="name" name="name">
-        </form></td>
-          <td><form>
-            <input type="text" id="name" name="name">
-        </form></td>
-          <td><form>
-            <input type="text" id="name" name="name">
-        </form></td>
-        </tr><form>
-                <input type="text" id="name" name="name">
-            </form>
-      </table>
 
     <script>
         const userInput = document.getElementById("userInput");
@@ -118,7 +90,6 @@
 
         const calcTable = document.getElementById("calcTable");
         const tableRows = document.querySelector("table").rows; //this is an array of the row arrays
-       // tableRows[1].cells[1].textContent //this is access to a cell in the table to change it
         
         const sample = document.createElement("h2");
         document.querySelector("body").appendChild(sample);
@@ -132,11 +103,14 @@
             sample.textContent = "SAMPLE This content added by JavaScript";
 
             //add something about adding entries to table - calcTable
-            /*
-            for (let i = 1; i < tableRows.length; i++){
-                tableRows[i].cells[0].textContent = obj.name;
-            }
-            */
+            tableRows[1].cells[0].textContent = obj.name;
+            tableRows[1].cells[1].textContent = obj.master;
+            tableRows[1].cells[2].textContent = obj.child;
+            tableRows[1].cells[3].textContent = obj.flex 
+            
+            tableRows[1].cells[1].textContent = (master1 + master2 + master3) / 3;
+            tableRows[1].cells[2].textContent = (child1 + child2 + child3) / 3;
+            tableRows[1].cells[3].textContent = (flex1 + flex2 + flex3) / 3;
             
         })
 
