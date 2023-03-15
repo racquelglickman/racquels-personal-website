@@ -21,7 +21,7 @@
         <input type="number" id="flex" name="flex" min="0" max="4712">
         <input type="submit">
     </form><br>
-
+<!--
     <table id="calcTable">
         <tr>
           <th>Name</th>
@@ -48,11 +48,78 @@
           <td></td>
         </tr>
       </table>
+    -->
     
+    
+    <table id="calcTable">
+        <tr>
+          <th>Name</th>
+          <th>Master</th>
+          <th>Child</th>
+          <th>Flex</th>
+        </tr>
+        <tr>
+          <td>
+            <form>
+                <input type="text" id="name" name="name">
+            </form>
+          </td>
+          <td>
+            <form>
+                <input type="text" id="name" name="name">
+            </form>
+          </td>
+          <td>
+            <form>
+                <input type="text" id="name" name="name">
+            </form>
+          </td>
+          <td>
+            <form>
+                <input type="text" id="name" name="name">
+            </form>
+        </td>
+        </tr>
+        <tr>
+          <td><form>
+            <input type="text" id="name" name="name">
+        </form></td>
+          <td><form>
+            <input type="text" id="name" name="name">
+        </form></td>
+          <td><form>
+            <input type="text" id="name" name="name">
+        </form></td>
+          <td><form>
+            <input type="text" id="name" name="name">
+        </form></td>
+        </tr>
+        <tr>
+          <td><form>
+            <input type="text" id="name" name="name">
+        </form></td>
+          <td><form>
+            <input type="text" id="name" name="name">
+        </form></td>
+          <td><form>
+            <input type="text" id="name" name="name">
+        </form></td>
+          <td><form>
+            <input type="text" id="name" name="name">
+        </form></td>
+        </tr><form>
+                <input type="text" id="name" name="name">
+            </form>
+      </table>
+
     <script>
         const userInput = document.getElementById("userInput");
-        const calcTable = document.getElementById("calcTable");
         let obj;
+
+        const calcTable = document.getElementById("calcTable");
+        const tableRows = document.querySelector("table").rows; //this is an array of the row arrays
+       // tableRows[1].cells[1].textContent //this is access to a cell in the table to change it
+        
         const sample = document.createElement("h2");
         document.querySelector("body").appendChild(sample);
         userInput.addEventListener('submit', function (e) {
@@ -65,6 +132,12 @@
             sample.textContent = "SAMPLE This content added by JavaScript";
 
             //add something about adding entries to table - calcTable
+            /*
+            for (let i = 1; i < tableRows.length; i++){
+                tableRows[i].cells[0].textContent = obj.name;
+            }
+            */
+            
         })
 
     </script>
